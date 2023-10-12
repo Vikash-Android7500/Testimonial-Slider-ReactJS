@@ -1,42 +1,39 @@
 import React from "react";
-import {FaQuoteLeft, FaQuoteRight} from "react-icons/fa";
+import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 
-const Card = ({props, review}) => {
-     const {image, name, job, text} = review;
+const Card = ({ review }) => {
+  const { image, name, job, text } = review;
 
-     return (
-       <div className="flex flex-col md:relative">
-         {/* images */}
-         <div className="absolute top-[-7rem] z-10 mx-auto">
-           <img
-             className="w-[140px] h-[140px] aspect-square rounded-full z-[1]"
-             src={image}
-           />
-           <div className="w-[140px] h-[140px] bg-violet-500 rounded-full absolute top-[-6px] left-2 z-[-1]"></div>
-         </div>
+  return (
+    <main className="flex flex-col lg:relative">
+      <section className="absolute top-[3.9rem] lg:top-[-3rem] z-10 mx-auto">
+        <img
+          className="md:w-[140px] md:h-[140px] w-[80px] h-[80px] aspect-square rounded-full z-[1]"
+          src={image}
+          alt="photo"
+        />
+        <hr className="md:w-[140px] md:h-[140px] w-[80px] h-[80px] bg-violet-500 rounded-full absolute top-[-6px] left-2 z-[-1]"></hr>
+      </section>
 
-         {/* Names */}
-         <div className="text-center mt-7">
-           <p className="font-bold text-2xl capitalize">{name}</p>
-         </div>
+      <section className="text-center mt-7">
+        <p className="font-bold md:text-2xl capitalize">{name}</p>
+      </section>
 
-         <div className="text-center mt-1">
-           <p className="text-violet-300 uppercase text-sm">{job}</p>
-         </div>
+      <section className="text-center mt-1">
+        <p className="text-violet-300 uppercase text-sm">{job}</p>
+      </section>
 
-         <div className="mx-auto mt-5 text-violet-400">
-           <FaQuoteLeft />
-         </div>
+      <section className="mx-auto mt-5 text-violet-400">
+        <FaQuoteLeft />
+      </section>
 
-         <div className="text-center mt-4 text-slate-500">{text}</div>
+      <section className="text-center mt-4 text-slate-500">{text}</section>
 
-         <div className="mx-auto mt-5 text-violet-400">
-           <FaQuoteRight />
-         </div>
-
-         
-       </div>
-     );
+      <section className="mx-auto mt-5 text-violet-400">
+        <FaQuoteRight />
+      </section>
+    </main>
+  );
 };
 
 export default Card;
